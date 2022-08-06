@@ -1,4 +1,4 @@
-const { writeFile, copyFile } = require('./utils/generateMarkdown')
+const { writeFile, copyFile } = require('./generateMarkdown')
 let inquirer = require('inquirer');
 const fs = require('fs');
 
