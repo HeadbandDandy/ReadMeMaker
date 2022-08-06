@@ -1,0 +1,24 @@
+{
+  "name": "readmemaker",
+  "version": "1.0.0",
+  "description": "this application will allow users to create a readMe file via Node.Js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeadbandDandy/ReadMeMaker.git"
+  },
+  "keywords": [],
+  "author": "'DJ'",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HeadbandDandy/ReadMeMaker/issues"
+  },
+  "homepage": "https://github.com/HeadbandDandy/ReadMeMaker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
