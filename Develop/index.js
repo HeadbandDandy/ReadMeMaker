@@ -1,6 +1,5 @@
-const { writeFile, copyFile } = require('./utils/generateMarkdown')
+const template = require('./src/template')
 const inquirer = require('inquirer');
-const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
   
@@ -15,7 +14,7 @@ const userQuestions = () => {
       {
           type: 'input',
           name: 'author',
-          message: 'Who is the Author of this repository?',
+          message: 'Who is the Author of this repository? (Required)',
           validate: authorInput => {
               if (authorInput) {
                   return true;
@@ -26,9 +25,22 @@ const userQuestions = () => {
           }
       },
       {
+        type: 'input',
+        name: 'username',
+        message: 'What is your GitHub Username? (Required)',
+        validate: authorInput => {
+            if (authorInput) {
+                return true;
+            } else {
+                console.log('Please enter a valid username!');
+                return false;
+            }
+        }
+    },
+      {
           type: 'input',
           name: 'title',
-          message: 'Enter a title!',
+          message: 'Enter a title! (Required)',
           validate: titleInput => {
               if (titleInput) {
                   return true;
@@ -41,7 +53,7 @@ const userQuestions = () => {
       {
         type: 'input',
         name: 'email',
-        message: 'Enter an email address!',
+        message: 'Enter an email address! (Required)',
         validate: emailInput => {
             if (emailInput) {
                 return true;
@@ -117,7 +129,7 @@ const userPrompt = repoData => {
        type: 'input',
       name: 'license',
       message: 'Please provide a license for your project!',
-      choices: ['MIT', 'Apache', 'BSD', 'Eclipse', 'GNU', 'Mozilla', 'Boost', 'Creative Commons' ],
+      choices: ['MIT', 'Apache', 'GNU' ],
       validate: licenseInput => {
         if (licenseInput) {
           return true;
@@ -168,35 +180,44 @@ const userPrompt = repoData => {
 
 
 }
-
+console.log(generateMarkdown)
 userQuestions()
     .then(userPrompt)
     .then(repoData => {
       console.log(repoData);
       return generateMarkdown(repoData);
     })
+    .then(readmeMD => {
+      return writeFile(readmeMD)
+    })
+    .then(writeFileResponse => {
+      console.log(writefileResponse)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 
   
 
 
-// // TODO: Include packages needed for this application
+// // // TODO: Include packages needed for this application
 
-// // TODO: Create an array of questions for user input
-// // const questions = [
-// //   title, 'What is the title of your project?',
-// //   description, 'Do you have a Description of your project?'
+// // // TODO: Create an array of questions for user input
+// // // const questions = [
+// // //   title, 'What is the title of your project?',
+// // //   description, 'Do you have a Description of your project?'
   
-// // ];x
+// // // ];x
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
 
-// // TODO: Create a function to initialize app
-// function init() {}
+// // // TODO: Create a function to initialize app
+// // function init() {}
 
-// // Function call to initialize app
-// init();
+// // // Function call to initialize app
+// // init();
 
-// let message = "Hello Node";
-// console.log(message);
+// // let message = "Hello Node";
+// // console.log(message);
 
