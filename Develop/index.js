@@ -76,9 +76,9 @@ const userPrompt = repoData => {
   ==================================
   `);
   //below creates an project array if one is not present
-  if (!repoData.project) {
-    repoData.project = {};
-  }
+  // if (!repoData.project) {
+  //   repoData.project = {};
+  // }
   //next series of questions for user
   
   return inquirer.prompt([
@@ -93,6 +93,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
+    },
+    {
       type: 'input',
       name: 'table of contents',
       message: 'Please provide a table of content section',
@@ -104,7 +106,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
-       type: 'input',
+    },
+     {  type: 'input',
       name: 'installation',
       message: 'Please provide information about installation',
       validate: installInput => {
@@ -115,7 +118,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
-       type: 'input',
+     },
+    {   type: 'input',
       name: 'usage',
       message: 'Please provide information about usage!(Required)',
       validate: usageInput => {
@@ -126,6 +130,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
+    },
+    {
        type: 'input',
       name: 'license',
       message: 'Please provide a license for your project!',
@@ -138,6 +144,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
+    },
+    {
        type: 'input',
       name: 'contributor',
       message: 'Would you like to add a contributor?',
@@ -149,6 +157,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
+    },
+    {
        type: 'input',
       name: 'test',
       message: 'Was testing provided for your project?',
@@ -160,6 +170,8 @@ const userPrompt = repoData => {
           return false;
         }
       },
+    },
+    {
        type: 'input',
       name: 'questions',
       message: 'Would you like to provide any additional questions?',
@@ -171,6 +183,7 @@ const userPrompt = repoData => {
           return false;
         }
       },
+  
 
   }])
   .then(projectData => {
@@ -185,7 +198,7 @@ userQuestions()
     .then(userPrompt)
     .then(repoData => {
       console.log(repoData);
-      return generateMarkdown(repoData);
+      return generateMarkdown(projectData);
     })
     .then(readmeMD => {
       return writeFile(readmeMD)
@@ -197,27 +210,10 @@ userQuestions()
       console.log(err)
     })
 
+// userPrompt();
+
   
 
 
-// // // TODO: Include packages needed for this application
 
-// // // TODO: Create an array of questions for user input
-// // // const questions = [
-// // //   title, 'What is the title of your project?',
-// // //   description, 'Do you have a Description of your project?'
-  
-// // // ];x
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // // TODO: Create a function to initialize app
-// // function init() {}
-
-// // // Function call to initialize app
-// // init();
-
-// // let message = "Hello Node";
-// // console.log(message);
 
