@@ -1,11 +1,11 @@
-# da
+# Make a Hub
 
-     ![github license] (https://img.shields.io/badge/license-GNU-green.svg)
+     ![github license] (https://img.shields.io/badge/license-Apache-green.svg)
 
 
 ## Description
 
-ada
+This project allows users to make a GitHub
 
 
 
@@ -22,12 +22,12 @@ ada
 ## Installation
 
 
-da
+project used installation from inquirer via npm i inquirer...
 
 
 ## Usage
 
-dads
+Can be used via mobile products and other devices
 
  ## License
 
@@ -40,8 +40,8 @@ undefined
 
 To run test run the following command: 
 
-ada
+Test Driven Deployment was used to make the application
 
 ## Questions 
 
-if you have any questions about the repo or an open issue contact me at ddd. You can find more of my work @ [da](https://github.com/da/)
+if you have any questions about the repo or an open issue contact me at makeahub@gmail.com. You can find more of my work @ [HeadbandDandy](https://github.com/HeadbandDandy/)
