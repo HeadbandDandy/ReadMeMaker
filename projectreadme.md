@@ -33,4 +33,3 @@ This project creates a readme.md file for a user who answers the prompt question
 
 ## Video 
 
-![Video Demonstration] (/Users/moneymakingdandy/Desktop/read-me-maker/ReadMeMaker/readmevideo.mov)
